@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from 'axios'
-import photoOfDay from "../photoOfDay"
+import PhotoOfDay from "./components/PhotoOfDay"
 
 
 const apiKey = "INVPPOKGylFoV3ksSIcyuMQBtnzywOcHyEspSKTl"
 
 function App() {
   const [nasData, setNasData] = useState([])
-  const [currentPod, setPod] = useState()
+  const [count, setCount] = useState(5)
 
   // const openDetails = id => {
   //   setCurrentFriendId(id)
@@ -35,7 +35,9 @@ function App() {
   return (
     <div className="App container">
       <h1>Photo Of The Day</h1>
-
+      {
+        nasData && <PhotoOfDay nasData={nasData} />
+      }
     </div>
   );
 }
