@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.pod {
+  width: 30rem;
+}

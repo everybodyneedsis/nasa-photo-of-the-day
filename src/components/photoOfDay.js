@@ -6,13 +6,11 @@ export default function PhotoOfDay(props) {
     console.log(nasData)
     return (
     <div className='container'>
-        
-                <div>
-                    <h2>NASA photo of the day {nasData.date}</h2>
-                    <img src={nasData.hdurl} alt="test" />
-                </div>
-            
-        
+        <div>
+            <h2>NASA photo of the day {nasData.date}</h2>
+            <p>{nasData.explanation}</p>
+            <img className="pod" src={nasData.hdurl} alt="test" />
+        </div>
     </div>
     )
 }
