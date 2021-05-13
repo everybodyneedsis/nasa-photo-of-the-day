@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import App from '../App'
 
 export default function PhotoOfDay(props) {
-    const { nasData, prevClicked, nextClicked } = props
+    const { nasData, prevClicked, nextClicked, showNextButton } = props
     console.log(nasData)
     return (
     <div className='container'>
@@ -12,7 +12,9 @@ export default function PhotoOfDay(props) {
             <img className="pod" src={nasData.hdurl} alt="test" />
         </div>
         <button onClick={prevClicked}>Prev</button>
-        <button onClick={nextClicked}>Next</button>
+        
+        {showNextButton && <button onClick={nextClicked}>Next</button>}
+
     </div>
     )
 }

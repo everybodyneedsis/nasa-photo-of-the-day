@@ -42,7 +42,7 @@ function App() {
     <div className="App container">
       <h1>Photo Of The Day</h1>
       {
-        nasData && currentIndex ? <PhotoOfDay nasData={nasData[currentIndex]} prevClicked={handlePrevClicked} nextClicked={handleNextClicked} /> : 'loading...'
+        nasData && currentIndex ? <PhotoOfDay nasData={nasData[currentIndex]} prevClicked={handlePrevClicked} nextClicked={handleNextClicked} showNextButton={currentIndex < nasData.length - 1} /> : 'loading...'
       }
     </div>
   );
