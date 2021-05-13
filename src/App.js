@@ -10,6 +10,17 @@ function App() {
   const [nasData, setNasData] = useState()
   const [currentIndex, setCurrentIndex] = useState()
 
+  const handlePrevClicked = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    }
+  }
+  const handleNextClicked = () => {
+    if (currentIndex < nasData.length - 1) {
+      setCurrentIndex(currentIndex + 1)
+    }
+  }
+
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=2021-05-05`)
       .then((response) => {
@@ -31,7 +42,7 @@ function App() {
     <div className="App container">
       <h1>Photo Of The Day</h1>
       {
-        nasData ? <PhotoOfDay nasData={nasData[currentIndex]} /> : 'loading...'
+        nasData && currentIndex ? <PhotoOfDay nasData={nasData[currentIndex]} prevClicked={handlePrevClicked} nextClicked={handleNextClicked} /> : 'loading...'
       }
     </div>
   );
