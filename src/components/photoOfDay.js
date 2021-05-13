@@ -11,6 +11,7 @@ export default function PhotoOfDay(props) {
             <p>{nasData.explanation}</p>
             <img className="pod" src={nasData.hdurl} alt="test" />
         </div>
+        <button>Prev</button>
     </div>
     )
 }
